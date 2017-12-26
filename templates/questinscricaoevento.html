@@ -1,0 +1,148 @@
+<div class="section" style="padding-top: 20px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" >
+        <h1>Ficha de inscrição</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 style="color: #c71706">DADOS SÓCIO DEMOGRÁFICO</h3>
+          <form role="form" method="POST" action="/enviarquestionario">
+                {% csrf_token %}
+                <div class="col-md-2" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="acad">Acadêmico</label>
+                        <br />
+                          <input type="radio" name="academico" id="acad" value="sim" checked>Sim<br>
+                          <input type="radio" name="academico" value="não">Não<br>
+                      </div>
+                    </div>
+                    <div class="col-md-8" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="curso">Curso</label>
+                        <input class="form-control" id="curso" type="text" name="curso">
+                    </div>
+                </div>
+                <div class="col-md-2" style="padding-right:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="profsaude">Profissional da saúde</label>
+                        <br />
+                          <input type="radio" name="profsaude" id="profsaude" value="sim" checked>Sim<br>
+                          <input type="radio" name="profsaude" value="não">Não<br>
+                    </div>
+                </div>
+
+
+               <div class="col-md-8" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="profissao">Profissão</label>
+                        <input class="form-control" id="profissao" type="text" name="profissao">
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="temposervico">Tempo de serviço na área da saúde</label>
+                        <input class="form-control" id="temposervico" type="text" name="temposervico">
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="raps">Trabalha na rede de atenção psicossocial(***RAPS)</label>
+                        <br />
+                          <input type="radio" name="raps" id="rap" value="sim" checked>Sim<br>
+                          <input type="radio" name="raps" value="não">Não<br>
+                    </div>
+                </div>
+
+                 <div class="col-md-5" style=" padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="localtrabalho">Local de trabalho:</label>
+                        <input class="form-control" id="localtrabalho" type="text" name="localtrabalho">
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left:0px; padding-right: 0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="funcaotrabalho">Função:</label>
+                        <input class="form-control" id="funcaotrabalho" type="text" name="funcaotrabalho">
+                    </div>
+                </div>
+
+                 <div class="col-md-12" style="padding-left:0px; padding-right: 0 ">
+
+                <div class="col-md-6" style="padding-left:0px; ">
+                    <div class="form-group">
+                        <label class="control-label"  for="temprapsmental">Tempo de serviço na área de saúde mental ou RAPS:</label>
+                        <input class="form-control" id="temprapsmental" type="text" name="temprapsmental">
+                    </div>
+                </div>
+
+                 <div class="col-md-6" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label"  for="participaant">Já participou do ESAMMA:</label>
+                        <br />
+                          <input type="radio" name="participaant" id="participaant" value="sim" checked>Sim<br>
+                          <input type="radio" name="participaant" value="não">Não<br>
+                    </div>
+                </div>
+                     </div>
+
+                <div class="col-md-12" style="padding-left:0px; padding-right: 0;">
+                    <div class="form-group">
+                        <label class="control-label"  for="saudementalf">Em seu período escolar (curso técnico, curso para ACS, graduação ou pós graduação) foi abordado algum
+tema voltado para a saúde Mental ou Psiquiatria:</label>
+                        <br />
+                          <input type="radio" name="saudementalf" id="saudementalf" value="sim" checked>Sim<br>
+                          <input type="radio" name="saudementalf" value="não">Não<br>
+                    </div>
+                </div>
+
+                 <div class="col-md-12" style="padding-left:0px; padding-right: 0;">
+                    <div class="form-group">
+                        <label class="control-label"  for="importancia">Você acredita ser importante discutir sobre as temáticas que envolvem a saúde mental:</label>
+                        <br />
+                          <input type="radio" name="importancia" id="importancia" value="sim" checked>Sim<br>
+                          <input type="radio" name="importancia" value="não">Não<br>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding-left:0px; padding-right: 0;">
+                    <div class="form-group">
+                        <label class="control-label"  for="justificativa">Justifique</label>
+                        <br />
+                        <textarea class="form-control" name="justificativa" id="justificativa"></textarea>
+
+                    </div>
+                </div>
+
+                 <div class="col-md-12" style="padding-left:0px; padding-right: 0;">
+                 <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

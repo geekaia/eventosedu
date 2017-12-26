@@ -1,0 +1,76 @@
+
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <center>
+
+                  <div ng-controller="CarouselDemoCtrl" id="slides_control">
+                      <div style="max-width: 1024px;">
+                          <carousel interval="myInterval">
+                              <slide ng-repeat="slide in slides" active="slide.active">
+                                  <img ng-src="{{slide.image}}">
+                                  <div class="carousel-caption">
+                                      <a class="btn btn-lg btn-primary" href="#inscricao">Inscrição</a>
+                                  </div>
+                              </slide>
+                          </carousel>
+                      </div>
+                  </div>
+          </center>
+
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center text-primary">Boas Vindas</h1>
+            <p>O Encontro de Saúde Mental do Médio Araguaia (ESAMMA) trata-se de um evento cientifico voltado a área de saúde mental, realizado pelo projeto de pesquisa e extensão “Saúde Mental: os desafios da assistência” da Universidade Federal de Mato Grosso (UFMT), Campus Universitário do Araguaia (CUA) coordenado pela professora Me. Alisséia Guimarães Lemes.
+        </p><p>
+                O ESAMMA surgiu em 2014, a partir das inquietações de docentes, estudantes e colaboradores do projeto de extensão em saúde mental durante as atividades realizadas na comunidade desde o ano de 2013. A partir das inquietações, viu-se a necessidade da criação de um evento cientifico voltada a área de saúde mental nesta região, que pudesse proporcionar um espaço de diálogo e troca de conhecimento entre os ministrantes, profissionais e estudantes. </p><p>
+Anualmente o evento vem abordando temas relevantes (da prevenção a reabilitação) envolvendo a saúde mental da região Araguaia, tendo como foco a desmistificação do preconceito que envolve os serviços de atendimento em saúde mental, bem como, reforçar cada vez mais, a co-responsabilidade de todos os profissionais e futuros profissionais no atendimento de saúde mental em seus mais diversos locais de atenção ao usuário. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" draggable="true">
+            <div id="map" style="height:400px; max-width: 100%;"></div>
+            <script>
+            $(function() {
+                var localreal = new google.maps.LatLng(-15.893775, -52.265108);
+
+              var mapCanvas = document.getElementById("map");
+                    var mapOptions = {
+                        center: localreal, zoom: 16
+                    };
+
+               var map = new google.maps.Map(mapCanvas, mapOptions);
+
+                var marker = new google.maps.Marker({
+                      position: localreal, // variável com as coordenadas Lat e Lng
+                      map: map,
+                      title:"Anfiteatro Fernando Peres de Farias (Prefeitura Municipal de Barra do Garças )"
+                  });
+
+ 
+
+	    }); 
+
+
+	     
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+

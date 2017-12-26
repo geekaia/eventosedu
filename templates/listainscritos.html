@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de inscritos ESAMMA</title>
+    {% load staticfiles %}
+    <script src={% static "js/sorttable.js" %}> </script>
+    <script>
+    function printData()
+    {
+       var divToPrint=document.getElementById("printTable");
+       newWin= window.open("");
+       newWin.document.write(divToPrint.outerHTML);
+       newWin.print();
+       newWin.close();
+    }
+    </script>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="printTable">
+    <center>
+    <h1>Lista de inscritos ESAMMA 2016</h1>
+    </center>
+    <table border="1" class="sortable">
+        <thead>
+            <td width="50px" align="center">Quant.</td>
+            <td width="300px" align="center">Nome</td>
+            <td width="150px"  align="center">29/set/2016</td>
+            <td width="150px"  align="center">30/set/2016</td>
+        </thead>
+        <tbody>
+        {% for inscrito in inscritos %}
+            <tr>
+                <td>{{ inscrito.id }}</td>
+                <td>{{ inscrito.nome }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+     </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

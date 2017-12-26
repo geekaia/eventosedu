@@ -1,0 +1,19 @@
+etnia by name 
+estadocivil
+escolaridade
+renda
+academico
+instituicaodeensino
+alunotecnico
+profraps
+identpublico
+usuarioservico
+usuarioservicofamilia
+japarticipou
+abordcont by name 
+partcurso
+jaauciliou
+jaaucilioudrogas
+opiniaodiscussao
+opiniaoevento
+

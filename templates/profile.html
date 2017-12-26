@@ -1,0 +1,187 @@
+
+
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+
+            <h1>Perfil</h1>
+            {% if mostrarstep %}
+                <h3 style="color: #c71706">Passo 3/3</h3>
+            {% endif %}
+            <br />
+            <h2>{{ mensagem  }}</h2>
+            <hr>
+          <div class="col-md-12">
+            <form role="form" method="POST" action="/cadPerfil">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="control-label" for="nome">Nome</label>
+                <input class="form-control" id="nome" type="text" value="{{ request.user.get_full_name}}" readonly required>
+                <!-- O nome do Crachá -->
+              </div>
+              <div class="col-md-6" style="padding-left:0px;">
+                <div class="form-group">
+                  <label class="control-label" for="nome">Nome no crachá</label>
+                  <input class="form-control" id="nomecracha" type="text" name="nomecracha" value="{{ pf.nomecracha }}" required>
+                  <!-- O nome do Crachá -->
+                </div>
+              </div>
+                <span style="width:20px" class="hidden-xs"></span>
+              <div class="col-md-6" style="padding-right:0px; padding-left:0px;">
+                <div class="form-group">
+                  <label class="control-label" for="nome">E-mail</label>
+                  <input class="form-control" id="email" type="text" name="email" value="{{ pf.email }}" required>
+                  <!-- O nome do Crachá -->
+                </div>
+              </div>
+
+                <!-- AQUI DEU MERDA -->
+              <div class="col-md-2" style="padding-left:0px; ">
+                <div class="form-group">
+                  <label class="control-label" for="dtnasci">Data de Nasc.</label>
+                  <input class="form-control" id="dtnasci" type="text" name="dtnasci" value="{{ pf.datanasci }}" required>
+                  <!-- O nome do Crachá -->
+                </div>
+              </div>
+
+
+              <div class="col-md-2" style="padding-left:0px;">
+
+                <div class="form-group">
+                  <label class="control-label" for="sexo">Gênero:</label>
+
+                  <select id="sexo" name="sexo" class="form-control" required>
+                          <option value="">  ---- </option>
+                      {% if pf.sexo == 'Masculino' %}
+                          <option value="Masculino" selected>Masculino</option>
+                          <option value="Feminino">Feminino</option>
+                      {% else %}
+                          <option value="Masculino">Masculino</option>
+                          <option value="Feminino" selected>Feminino</option>
+                      {% endif %}
+
+                  </select>
+                  <!-- O nome do Crachá -->
+                </div>
+              </div>
+
+
+
+              <div class="col-md-3" style="padding-left:0px;">
+
+                <div class="form-group">
+                  <label class="control-label" for="cep">CEP</label>
+                  <input class="form-control" id="cep" type="text" value="{{ pf.cep }}" name="cep" required>
+                </div>
+              </div>
+
+              <div class="col-md-2" style=" padding-left:0px;">
+
+                <div class="form-group">
+                  <label class="control-label" for="Estado">Estado</label>
+                  <select name="Estado" id="Estado" class="form-control" required>
+
+                      {% for key, value in estados.items %}
+                            {% if key == pf.estado %}
+                                <option value="{{ key }}" selected>{{ value }}</option>
+                            {% else %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endif %}
+                      {% endfor %}
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="col-md-3" style="padding-left:0px; padding-right:0px;">
+
+                  <div class="form-group">
+                      <label class="control-label" for="cep">Cidade</label>
+                      <input class="form-control" id="cidade" type="text" name="cidade" value="{{ pf.cidade }}" required>
+                  </div>
+               </div>
+
+                <div class="col-md-12" style="padding-left:0px; padding-right:0">
+                    <div class="form-group">
+                        <label class="control-label" for="endereco">Endereço</label>
+                        <input class="form-control" id="endereco" name="endereco" value="{{ pf.endereco }}" type="text" required>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="bairro">Bairro</label>
+                        <input class="form-control" id="bairro" type="text" name="bairro" value="{{ pf.bairro }}" required>
+                    </div>
+                </div>
+
+                <div class="col-md-5" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="complemento">Complemento</label>
+                        <input class="form-control" id="complemento" type="text" name="complemento" value="{{ pf.complemento }}">
+                    </div>
+                </div>
+
+                <div class="col-md-2" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="telefone">Telefone</label>
+                        <input class="form-control" id="telefone" type="text" name="telefone" value="{{ pf.telefone }}">
+                    </div>
+                </div>
+
+                <div class="col-md-2" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="celular">Celular</label>
+                        <input class="form-control" id="celular" type="text" name="celular" value="{{ pf.celular }}" required>
+                    </div>
+                </div>
+
+
+                <BR />
+                 <div class="col-md-12" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                      <hr>
+                    <h3>Documentos</h3>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6" style="padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="rg">RG</label>
+                        <input class="form-control" id="rg" type="text" name="rg" value="{{ pf.rg }}" required>
+                    </div>
+                </div>
+                <span style="width:20px" class="hidden-xs"></span>
+                <div class="col-md-6" style="padding-right:0px; padding-left:0px;">
+                    <div class="form-group">
+                        <label class="control-label" for="cpf">CPF</label>
+                        <input class="form-control" id="cpf" type="text" name="cpf" value="{{ pf.cpf }}" required>
+                    </div>
+                </div>
+
+
+              <div class="col-md-12" style="padding-right:0px; padding-left:0px;  padding-top: 20px; ">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script>
+    $(function(){
+       $("#cep").mask("99999-999");
+        $("#telefone").mask("(99) 9999-9999");
+        $("#celular").mask("(99) 99999-9999");
+        $("#cpf").mask("999.999.999-99");
+        $("#dtnasci").mask("99/99/9999");
+
+
+    });
+
+</script>

@@ -1,0 +1,58 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <br />
+                <br />
+
+                <h1>Mudar senha de acesso</h1>
+                <hr>
+
+                <form class="form-horizontal" action="/changePass" method="POST" role="form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="oldpass" class="control-label">Senha antiga</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="oldpass" name="oldpass" placeholder="Senha" required />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="newpass" class="control-label">Nova Senha</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="newpass" name="newpass" placeholder="Nova Senha"  required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="newpassr" class="control-label">Repita a nova senha</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="newpassr" name="newpassr" placeholder="Repita a sua nova senha" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Mudar</button>
+                        </div>
+                    </div>
+                </form>
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+Enviar arquivo com certificado (Criar uma função que envia o e-mail com o certificado ao fazer upload do arquivo)
+Lista em PDF para assinaturas 2 colunas
+bloquear a inscrição pelo prazo e mostrar encerrado quando finalizado o prazo
+
+Extrair os dados do QUESTIONARIO
+
+Definir 290 inscrições de ouvintes no evento
+
+ 
+Adicionar para enviar e-mail dos contatos  - ok 
+
+Colocar na programação em CONSTRUÇÃO pegar uma figura - OK
+
+
+Adicionar uma função para efetuar a verificação do e-mail - TODO

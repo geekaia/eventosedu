@@ -1,0 +1,97 @@
+<html><head>
+    {% load staticfiles %}
+    {% load bootstrap3 %}
+    {% load socialaccount %}
+    <meta charset="utf-8">
+    <link rel="icon" href={% static "img/favicon.ico" %}>
+
+    <!-- JAVASCRIPT FILES  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+
+    <script src={% static "js/jquery.maskedinput.min.js" %}> </script>
+    <script src={% static "js/jquery.maskMoney.js" %}> </script>
+
+
+
+       <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" />
+
+
+    <!-- Botão animado -->
+    <link href={% static "css/estilo.css" %} rel="stylesheet" type="text/css" />
+
+
+</head><body>
+   <!-- so ate concluir -->
+<div class="section" style="padding-top: 20px;">
+  <div class="container">
+    <div class="row">
+    <h1>Eventos</h1>
+    <form action="/cadevento" method="post" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="control-label" for="nomeevento">Nome</label>
+            <input class="form-control" id="nomeevento" type="text" name="nomeevento" >
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="abreviacao">Nome Breve do Evento</label>
+            <input class="form-control" id="abreviacao" type="text" name="abreviacao" >
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="inicio">Inicio do evento</label>
+            <input class="form-control" id="inicio" type="date" name="inicio" >
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="fim">Fim do evento</label>
+            <input class="form-control" id="fim" type="date" name="fim" >
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="textoInicio">Texto da página inicial</label>
+            <textarea style="height: 150px;" class="form-control" id="textoInicio" name="textoInicio"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="taxainscricao">Taxa inscricao</label>
+            <input class="form-control" id="taxainscricao" type="text" name="taxainscricao" >
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="qtatividades">Qtd. máxima de Atividades para cada participante</label>
+            <input class="form-control" id="qtatividades" type="number" name="qtatividades" >
+        </div>
+
+        <button type="submit" class="btn btn-primary">Criar evento</button>
+    </form>
+    </div>
+  </div>
+</div>
+
+   <script>
+
+       $(document).ready(function(){
+           $("#taxainscricao").maskMoney({symbol:"R$",decimal:",",thousands:"."});
+       });
+   </script>
+
+ <!-- alem da quantidade maxima também temos a verificação das datas -->
+
+
+</body></html>
+
+
+
+

@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in participantes %}
+            <tr>
+                <td> {{ p.nome }}</td>
+                <td>{{ p.status }} <button>Confirmar Inscrição</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

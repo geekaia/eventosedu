@@ -1,0 +1,56 @@
+
+<div class="section" style="padding-top: 20px;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" >
+        <h1>Entre em contato conosco</h1>
+          <div id="mensagem" style="color: #c71706"> </div>
+        <form role="form" id="contatoform">
+          {% csrf_token %}
+          <div class="form-group">
+            <input class="form-control" name="nome" placeholder="Seu nome completo" type="text" required="">
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="Email" name="email" placeholder="Seu e-mail"  type="email" required="">
+          </div>
+          <div class="form-group">
+           <!-- <label class="control-label" for="telefone">Telefone</label> -->
+            <input class="form-control" id="telefone" name="telefone" placeholder="Seu telefone" type="text" required="">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="assunto" placeholder="assunto" id="assunto" type="text" required="">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="mensagem">Mensagem</label>
+            <textarea style="height: 230px" class="form-control" id="mensagem" name="mensagem" required=""></textarea>
+          </div>
+          <button class="btn btn-primary" id="btnenv" onclick="enviar();">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+      function enviar() {
+          document.getElementById("btnenv").disabled = true;
+          $.post( "/sendmail", $( "#contatoform" ).serialize() ).done(function(dt) {
+            var res = parseInt(dt);
+              //alert("Retorno :"+res);
+
+            if(res==1) {
+                $("#mensagem").html("Mensagem enviada com sucesso!!!");
+                $("#contatoform")[0].reset();
+                document.getElementById("btnenv").disabled = false;
+            } else {
+                $("#mensagem").html("Ocorreu um erro ao enviar a mensagem. Verifique os dados passados ou considere ligar ou enviar um e-mail.");
+            }
+        });
+      }
+    // Attach a submit handler to the form
+    $( "#contatoform" ).submit(function( event ) {
+      // Stop form from submitting normally
+      event.preventDefault();
+    });
+
+  </script>

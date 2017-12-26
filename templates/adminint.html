@@ -1,0 +1,18 @@
+<div class="section" style="padding-top: 20px;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" >
+          {% if user.get_username == "adm" %}
+                  <h1>Bem vindo administrador</h1>
+                  <h3>Ações:</h3>
+                  <a href="/gerarcsv" target="_blank">Gerar lista de inscritos</a> <br />
+                  <a href="/relatorioemail" target="_blank">Gerar lista de inscritos com e-mail</a> <br />
+
+          {% else %}
+                   <h1>Usuário sem permissão!!!</h1>
+          {% endif %}
+    </div>
+  </div>
+</div>
+</div>

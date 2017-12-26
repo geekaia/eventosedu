@@ -1,0 +1,170 @@
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <br />
+                <br />
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                    Cadastro</a>
+                            </h4>
+                        </div>
+{#                        <script src='https://www.google.com/recaptcha/api.js'></script>#}
+
+                        <div id="collapse1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="section">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-11"> <!-- ng-submit="criarUsuario(fcriaruser)"  ng-controller="criarUser" novalidate -->
+                                                <form class="form-horizontal" name="fcriaruser" id="fcriaruser" role="form" method="POST">
+                                                    {% csrf_token %}
+                                                     <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label for="username" class="control-label">Usuário</label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" onfocus="clicar();"  class="form-control" name="username" placeholder="Usuário para acessar o sistema" ng-model="username" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label for="nomecompleto"  class="control-label">Nome</label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" onfocus="clicar();" class="form-control" name="nomecompleto" placeholder="Nome Completo" ng-model="nomecompleto" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label for="email" class="control-label">E-mail:</label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="email" class="form-control" onfocus="clicar();" name="email" placeholder="E-mail para contato" ng-model="email" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label for="senha" class="control-label">Senha:</label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="password" onfocus="clicar();" id="senha" class="form-control" name="senha" placeholder="Senha de acesso" ng-model="senha" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-2">
+                                                            <label for="cfsenha" class="control-label">Confirmar Senha:</label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <input type="password" onfocus="clicar();" id="cfsenha" class="form-control" name="cfsenha" placeholder="Digite novamente a senha" ng-model="cfsenha" required>
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group">
+                                                         <div id="captcha_container"></div>
+{#                                                         <div class="g-recaptcha"  id="captcha_container" data-sitekey="6LeUhSMTAAAAANhROWAElq4SzwLxCO79MhFyVIzp"></div>#}
+                                                    </div>
+
+                                                    <br>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-10">
+                                                            <div id="mensagemcaduser"></div>
+                                                            <button class="btn btn-primary"
+                                                                     id="btcriauser" onclick="criaruser();">Cadastrar-se</button>
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+
+
+  function criaruser() {
+          document.getElementById("btcriauser").disabled = true;
+          $.post( "/criarusuario", $( "#fcriaruser" ).serialize() ).done(function(dt) {
+            var res = parseInt(dt);
+
+              //alert("Retorno :"+res);
+
+            if(res==0) {
+                $("#mensagemcaduser").html("As senhas não conferem!!");
+                $("#cfsenha").val("");
+                $("#senha").val("");
+            } else if(res==1) {
+                 $("#mensagemcaduser").html("Usuário já existe");
+                 resetCaptcha(); // ok
+
+            } else if(res==2){
+                 $("#mensagemcaduser").html("Erro na verificação do captcha!!");
+            } else if(res==3) {
+                window.location.reload();
+            }
+            else {
+                $("#mensagemcaduser").html("Ocorreu um erro no cadastro!!!");
+                resetCaptcha();
+            }
+            // reabilita o botão
+            document.getElementById("btcriauser").disabled = false;
+
+
+        });
+      }
+      var def = true;
+
+      function clicar()
+      {
+          if(def) {
+        onloadCallback();
+              def = false;
+              }
+      }
+
+      function resetCaptcha()
+      {
+          grecaptcha.reset(widgetId); // reabilita do captcha
+
+
+      }
+    // Attach a submit handler to the form
+    $( "#fcriaruser" ).submit(function( event ) {
+      // Stop form from submitting normally
+      event.preventDefault();
+    });
+  //<form class="form-horizontal" name="fcriaruser" id="fcriaruser" role="form" method="POST" action="/criarusuario" >
+
+    </script>

@@ -1,0 +1,17 @@
+
+apt-get install mysql-server 
+
+# database 
+create database evento; 
+
+
+#install mysql 
+sudo apt-get install python3-dev libmysqlclient-dev python3-mysqldb python-pip  python-dev libmysqlclient-dev
+
+
+
+
+
+sudo apt-get install python3-dev libmysqlclient-dev
+
+pip install mysqlclient
