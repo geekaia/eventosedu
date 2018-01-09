@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d46777-f52b-420c-bc43-91cb55638bd9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/.~lock.Rosa-CARTAZ DIVULGAÃÃO 2016.pptx#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/eventosedu.iml" afterPath="$PROJECT_DIR$/.idea/eventosedu.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventos/models.py" afterPath="$PROJECT_DIR$/eventos/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventos/views.py" afterPath="$PROJECT_DIR$/eventos/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventosedu/settings.py" afterPath="$PROJECT_DIR$/eventosedu/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eventosedu/urls.py" afterPath="$PROJECT_DIR$/eventosedu/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/installmysql.txt" afterPath="$PROJECT_DIR$/installmysql.txt" />
     </list>
     <ignored path="eventosedu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/eventos/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="628" column="48" lean-forward="true" selection-start-line="628" selection-start-column="48" selection-end-line="628" selection-end-column="48" />
+              <caret line="628" column="48" lean-forward="false" selection-start-line="628" selection-start-column="48" selection-end-line="628" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -120,8 +112,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eventosedu/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+            <state relative-caret-position="540">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -653,10 +645,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3215434" sideWeight="0.502338" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30904183" sideWeight="0.49766198" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30904183" sideWeight="0.49766198" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32615384" sideWeight="0.66199064" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39136302" sideWeight="0.748831" order="9" side_tool="false" content_ui="tabs" />
@@ -1012,15 +1005,15 @@
     <entry file="file://$PROJECT_DIR$/eventos/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="628" column="48" lean-forward="true" selection-start-line="628" selection-start-column="48" selection-end-line="628" selection-end-column="48" />
+          <caret line="628" column="48" lean-forward="false" selection-start-line="628" selection-start-column="48" selection-end-line="628" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eventosedu/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+        <state relative-caret-position="540">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>

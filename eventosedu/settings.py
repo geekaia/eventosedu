@@ -170,7 +170,11 @@ USE_TZ = True
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_USER = 'geekaia@gmail.com'
+=======
+EMAIL_HOST_USER = 'seuemail@gmail.com'
+>>>>>>> 1d49f4540d79dbd1187e94bb8531393ab6bef2b5
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
