@@ -96,7 +96,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
                 # requited by allauth
-                "django.core.context_processors.request",
+                'django.template.context_processors.request',
                 # last add
 
             ],
@@ -171,7 +171,7 @@ USE_TZ = True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'geekaia@gmail.com'
-EMAIL_HOST_PASSWORD = 'IFa1r2p3d4'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 
@@ -180,5 +180,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # Esta variavel e necessaria para rodar no servidor
 #STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
 
 

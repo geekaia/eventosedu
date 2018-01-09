@@ -571,13 +571,14 @@ def renderIndex(request):
     # testa se o usuario esta autenticado
     # se tiver ele e passado uma variavel para o javascript que ira redirecionar para o cadastro
 
-    user = request.user
+    user = ""
 
     # index 0 - não autenticado, index 1 - auth sem perfil, index 2 - auth sem
     # esta cadastrado?
     usr = ""
     index=0
     try:
+        user = request.user
         usr = User.objects.get(username=user.username)
         index=1
     except:
@@ -610,7 +611,8 @@ def renderIndex(request):
 
     context = {}
     context['index'] = index
-    return render(request, 'index.htm', context)
+
+    return render(request, "index.htm", context)
 
 
 def pesqnomes(request):

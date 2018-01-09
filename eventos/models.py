@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.forms.models import ModelForm
 
 class Perfil(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     nomecracha = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     datanasci = models.CharField(max_length=10)
@@ -36,7 +36,7 @@ class Perfil(models.Model):
 
 
 class Questionario(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     academico = models.BooleanField()
     curso = models.CharField(max_length=255)
     profsaude = models.BooleanField()
@@ -56,7 +56,7 @@ class Questionario(models.Model):
 
 
 class InscriUser(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     etnia = models.CharField(max_length=255, default="")
     estadocivil = models.CharField(max_length=255, default="")
     escolaridade= models.CharField(max_length=255, default="")
@@ -97,9 +97,9 @@ class Evento(models.Model):
 
 
 class Atividade(models.Model):
-    evento = models.ForeignKey(Evento)
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=50)
-    oradorouprofessor = models.ForeignKey(User) # funcao pesquisar usuarios
+    oradorouprofessor = models.ForeignKey(User, on_delete=models.CASCADE) # funcao pesquisar usuarios
     tipo = models.CharField(max_length=255) # palestra, curso, mesaredonda
     inicio = models.DateTimeField()
     fim = models.DateTimeField()
@@ -107,13 +107,13 @@ class Atividade(models.Model):
     local = models.CharField(max_length=50)# sala, anfiteatro e outros
 
 class InscricaoEv(models.Model):
-    evento = models.ForeignKey(Evento)
-    usuario = models.ForeignKey(User)
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class InscricaoAtiv(models.Model):
-    atividade = models.ForeignKey(Atividade)
-    evento = models.ForeignKey(Evento)
-    usuario = models.ForeignKey(User)
+    atividade = models.ForeignKey(Atividade, on_delete=models.CASCADE)
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     concluiuativ = models.BooleanField() # sim/nao - sim gera cert e nao
 
 

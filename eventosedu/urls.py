@@ -21,7 +21,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     url(r'^$',renderIndex),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^criarusuario', criarusuario),
     url(r'^loguser', logUser),
     url(r'^logoff', logoff),

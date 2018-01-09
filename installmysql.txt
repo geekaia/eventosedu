@@ -15,3 +15,113 @@ sudo apt-get install python3-dev libmysqlclient-dev python3-mysqldb python-pip  
 sudo apt-get install python3-dev libmysqlclient-dev
 
 pip install mysqlclient
+
+
+sudo mysqld_safe --skip-grant-tables &
+mysql -u root -p 
+FLUSH PRIVILEGES;
+update user set authentication_string=password('300686') where user='root';
+FLUSH PRIVILEGES;
+
+
+sudo vim /etc/apache2/sites-available/esamma
+
+# Workspace
+/opt/eventosedu
+
+# Environment
+/opt/evedu
+
+# Database 
+WSGIDaemonProcess esamma.cua.ufmt.br python-path=/opt/eventosedu:/opt/evedu/lib/python3.5/site-packages
+WSGIProcessGroup esamma.cua.ufmt.br
+
+<VirtualHost *:80>
+    ServerName esamma.cua.ufmt.br
+    WSGIScriptAlias / /opt/eventosedu/eventosedu/wsgi.py
+
+    <Directory /opt/eventosedu>
+        <Files wsgi.py>
+            Order allow,deny
+            Allow from all
+        </Files>
+    </Directory>
+
+    Alias /media/ /opt/eventosedu/media/
+    Alias /static/ /opt/eventosedu/static/
+
+    <Directory /opt/eventosedu/static>
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    <Directory /opt/eventosedu/media>
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+</VirtualHost>
+
+
+# WORKING
+<VirtualHost *:80>
+	ServerName cps.profjacinto.com
+
+
+	Alias /robots.txt /opt/capsdjango/static/robots.txt
+	Alias /favicon.ico /opt/capsdjango/static/favicon.ico
+
+	Alias /media/ /opt/capsdjango/media/
+	Alias /uploaded_images/  /opt/capsdjango/uploaded_images/
+
+
+	ErrorLog /opt/capsdjango/error.log
+	
+
+	
+	Alias /static /opt/capsdjango/static
+	<Directory /opt/capsdjango/static>
+		Require all granted
+	</Directory>
+
+        <Directory /opt/capsdjango/media/>
+                Require all granted
+        </Directory>
+
+
+
+	 <Directory /opt/capsdjango/capsdjango>
+		<Files wsgi.py>
+			Require all granted
+		</Files>
+	 </Directory>
+        WSGIDaemonProcess cps python-home=/opt/capsenv python-path=/opt/capsdjango
+	WSGIProcessGroup cps
+
+	WSGIScriptAlias / /opt/capsdjango/capsdjango/wsgi.py
+
+
+</VirtualHost>
+
+
+
+
+python manage.py collectstatic
+
+
+Endereço do sistema desenvolvido 
+http://cps.profjacinto.com/
+
+
+usuário da secretaria: admin
+senha: IF#CAPS2018
+
+usuário do profissional: geekaia
+senha: IF#CAPS2018
+
+t+ :) 
+
+
+
+
+
